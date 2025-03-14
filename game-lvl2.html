@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gossipza</title>
+  <link rel="stylesheet" href="style's/game.css">
+</head>
+<body style="background: url(pictures/backround.jpg);">
+  <section class="menu">
+    <div class="nav">
+
+      <div class="logo"><a class="active" href="/Index.html"><h1><img class="active" style="width: 85px;" src="pictures/logo.png">Gossipza</h1></a></div>
+      
+      <ul>
+        <li><a href="History.html"><h1>History</h1></a></li>
+        <li><a href="Fun-Facts.html"><h1>Fun Facts</h1></a></li>
+        <li><a href="Top-pizzas.html"><h1>Top Pizzas</h1></a></li>
+        <li><a href="Login.html"><img src="pictures/maze.png"></a></li>
+        <li><a href="About.html"><h1>About</h1></a></li>
+      </ul>
+
+    </div>
+  </section>
+  <div id="page">
+
+    <div id="Message-Container">
+      <div id="message">
+        <h1>Congratulations!</h1>
+        <p>You are done, click the button and proceed to the next level</p>
+        <p id="moves"></p>
+        <a href="game-lvl3.html">
+          <button class="game">Proceed</button>
+        </a>
+      </div>
+    </div>
+
+    <br>
+    <div id="menu">
+      <div class="custom-select">
+        <select id="diffSelect">
+          <option value="15">2 - Medium</option>
+        </select>
+      </div>
+      <input class="game" id="startMazeBtn" type="button" onclick="makeMaze()" value="start"/>
+    </div>
+    
+    <div class="timer" id="timer">5:00</div>
+
+    <script>
+      let timeLeft = 300; // 5 minutes in seconds
+      let timerRunning = false;
+      
+      function updateTimer() {
+          let minutes = Math.floor(timeLeft / 60);
+          let seconds = timeLeft % 60;
+          document.getElementById("timer").innerText = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      
+          if (timeLeft > 0) {
+              timeLeft--;
+              setTimeout(updateTimer, 1000);
+          } else {
+              alert("Time's up! Click the button to try again.");
+              window.location.href ="game.html"
+          }
+      }
+      
+      function startTimer() {
+          if (!timerRunning) { // Prevent multiple timers
+              timerRunning = true;
+              updateTimer();
+          }
+      }
+      
+      document.getElementById("startMazeBtn").addEventListener("click", function() {
+          startTimer(); // Start timer when button is clicked
+          makeMaze();   // Assuming this function initializes the maze
+      });
+      </script>
+
+    <div id="view">
+      <div id="mazeContainer">
+        <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+      </div>
+    </div>        
+
+    <p id="instructions">Use the arrow keys to move the pizza!</p>
+
+  </div>  
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+
+<script src="javascript/script.js"></script>
+
+</body>
+</html>

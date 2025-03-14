@@ -1,0 +1,205 @@
+*,::after,::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  background: url(pictures/backround.png);
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family:'Times New Roman', Times, serif;
+  line-height: 1.6;
+  padding: 0;
+  background-color: white;
+  color: #333;
+  color: aliceblue;
+}
+
+.nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: #600B04;
+}
+
+.nav img .pizzaboi {
+  width: 100px;
+}
+
+.nav img {
+  width: 58px;
+  height: auto;
+  margin-right: 10px; 
+}
+
+.active {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.nav .logo h1 {
+  font-weight: 600;
+  font-family: 1em;
+  font-size: 60px;
+  margin-left: 20px;
+  color: azure;
+  text-shadow: 5px 5px 5px #000000, 5px 2px 5px rgb(199, 194, 194);
+  display: flex;
+  align-items: center;
+}
+
+.nav .logo b{
+  color: orange;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul li{
+  margin-right: 60px;
+  margin-top: 20px;
+}
+
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 5px 5px 5px #000000, 5px 2px 5px rgb(199, 194, 194);
+  font-weight: 500;
+  font: 1em;
+  font-size: 17px; 
+  font-size:x-large
+}
+
+#view {
+  margin-top: 30px;
+  padding-bottom: 1000px;
+}
+
+#mazeContainer #mazeCanvas {
+  margin: 0;
+  display: block;
+  border: solid 2px white;
+  height: 400px;
+  background: url(pictures/backround.jpg);
+  color: white;
+}
+
+#mazeContainer {
+  top: 15px;
+  padding-left: 566px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.game, select {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 45px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: aliceblue;
+  display: inline-block;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
+}
+
+input:hover, select:hover {
+	background-color: rgb(0, 0, 0);
+}
+input:active, select:active {
+	background-color: rgb(0, 0, 0);
+  opacity: 0.3;
+}
+input:focus, select:focus {
+	outline: none;
+}
+.custom-select {
+	display: inline-block;
+}
+.custom-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: 125px center;
+}
+
+#Message-Container {
+  visibility: hidden;
+  color: white;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(193, 126, 3, 0.956);
+  z-index: 1;
+}
+#Message-Container #message {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+#page {
+	text-align: center;
+	height: auto;
+	width: auto;
+	margin: auto;
+}
+#page #menu {
+    margin: auto;
+    padding: 10px;
+    height: 65px;
+    box-sizing: border-box;
+}
+#page #menu h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 3.2rem;
+}
+
+#page #view {
+  position: absolute;
+}
+
+.timer {
+  font-size: xx-large;
+}
